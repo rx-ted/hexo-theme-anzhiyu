@@ -1,4 +1,14 @@
-#editor hello
+- editor_mode = theme.editor.mode
+#editor
     // 1. write mode 
     // 2. view mode
     // 3. two side include 1 and 2 
+    .toolbar 
+        each text, index in editor_mode
+            if (index == 0)
+                button(class='mode-btn curr' onclick="changeMode("+ index +")" )= text
+            else
+                button(class='mode-btn' onclick="changeMode("+ index +")" )= text
+    #editor-box.my-editor 
+
+script(src="../../blog/js/editor/dist/index.js") 
