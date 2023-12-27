@@ -121,6 +121,9 @@ body[data-type='about'] #web_bg {
   background-size: 200%;
   animation: gradient 15s ease infinite;
   width: 59%;
+  align-items: center; // 纵轴对齐方式，默认是纵轴 子元素垂直居中
+  justify-content: center; //纵轴对齐方式，默认是纵轴
+  margin:0 auto;
 }
 
 .author-content-item {
@@ -161,7 +164,7 @@ body[data-type='about'] #web_bg {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  width: 39%;
+  width: 50%;
 }
 
 .aboutsiteTips h2 {
@@ -467,6 +470,7 @@ body[data-type='about'] #web_bg {
   flex-wrap: wrap;
   height: -webkit-fill-available;
   height: 40%;
+  width: 50%;
 }
 
 .author-content-item.selfInfo div {
@@ -529,7 +533,7 @@ body[data-type='about'] #web_bg {
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  width: 39%;
+  width: 49%;
 }
 
 .author-content-item .author-content-item-tips {
@@ -558,7 +562,7 @@ body[data-type='about'] #web_bg {
   animation: gradient 15s ease infinite;
   min-height: 200px;
   height: fit-content;
-  width: 59%;
+  width: 50%; /* 特长词语越多，设置宽度变大，也随着maxim宽度减少，这两个宽度相加为99%, 1% 留給縫線x */
 }
 
 .author-content-item.buff .card-content {

@@ -16,11 +16,13 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
       include ./mourn.pug
     if page.type !== '404'
       #body-wrap(class=pageType)
-        include ./header/index.pug
+        //- header
+        include ./header/index.pug 
         main#blog-container
           if (is_home())
             include ./bbTimeList.pug
           if is_current("/")
+            //- top under header
             include ./top/top.pug
           if page.top_single
             - let background = page.top_single_background
@@ -46,8 +48,9 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
             else
               block content
               if theme.aside.enable && page.aside !== false
+                //- aside 
                 include widget/index.pug
-
+        
         - var footerBg = theme.footer_bg
         if (footerBg)
           if (footerBg === true)
@@ -59,7 +62,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
 
         footer#footer(style=footer_bg)
           !=partial('includes/footer', {}, {cache: true})
-        
+        //- 隐私协议弹窗
         if (theme.agreementPopup && theme.agreementPopup.enable && is_home_first_page())
           - let agreementPopupUrl = theme.agreementPopup.url
           script(defer).
